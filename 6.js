@@ -1,44 +1,34 @@
-// Tablica z wynikami studentów (obiekty z nazwą studenta i wynikiem)
-const studentsResults = [
-    { name: 'Jan', score: 85 },
-    { name: 'Anna', score: 92 },
-    { name: 'Marek', score: 78 },
-    { name: 'Kasia', score: 95 },
-    { name: 'Paweł', score: 88 }
+
+const ocenyUczniow = [
+    { imie: 'Szymon', ocena: 100 },
+    { imie: 'Kuba', ocena: 43 },
+    { imie: 'Zuzia', ocena: 78 },
+    { imie: 'Kasia', ocena: 52 },
+    { imie: 'Pawel', ocena: 88 }
   ];
   
-  // Funkcja do obliczania średniej wyników
-  function calculateAverage(results) {
-    // Zliczamy wszystkie wyniki studentów i dzielimy przez ich liczbę
-    const total = results.reduce((sum, { score }) => sum + score, 0);
-    return total / results.length;
+  function obliczSrednia(wynik) {
+    const oceny = wynik.reduce((sum, { ocena }) => sum + ocena, 0);
+    return oceny / wynik.length;
   }
   
-  // Funkcja do znajdowania najwyższego wyniku
-  function findHighestScore(results) {
-    // Szukamy największego wyniku używając metody reduce
-    return results.reduce((max, { score }) => (score > max ? score : max), 0);
+  function znajdzNajwWynik(wynik) {
+    return wynik.reduce((max, { ocena }) => (ocena > max ? ocena : max), 0);
   }
   
-  // Funkcja do znajdowania najniższego wyniku
-  function findLowestScore(results) {
-    // Szukamy najmniejszego wyniku używając metody reduce
-    return results.reduce((min, { score }) => (score < min ? score : min), 100);
+  function znajdzNajmnWynik(wynik) {
+    return wynik.reduce((min, { ocena }) => (ocena < min ? ocena : min), 100);
   }
   
-  // Funkcja do wyświetlania wyników
-  function displayResults(results) {
-    // Obliczamy średnią, najwyższy i najniższy wynik
-    const average = calculateAverage(results);
-    const highest = findHighestScore(results);
-    const lowest = findLowestScore(results);
+  function wyswietlWynik(wynik) {
+    const srednia = obliczSrednia(wynik);
+    const najwyzszy = znajdzNajwWynik(wynik);
+    const najnizszy = znajdzNajmnWynik(wynik);
   
-    // Wyświetlamy wyniki z wykorzystaniem template stringów
-    console.log(`Średnia wyników: ${average}`);
-    console.log(`Najwyższy wynik: ${highest}`);
-    console.log(`Najniższy wynik: ${lowest}`);
+    console.log(`Średnia wyników: ${srednia}`);
+    console.log(`Najwyższy wynik: ${najwyzszy}`);
+    console.log(`Najniższy wynik: ${najnizszy}`);
   }
   
-  // Uruchamiamy funkcję do wyświetlania wyników
-  displayResults(studentsResults);
+  wyswietlWynik(ocenyUczniow);
   
