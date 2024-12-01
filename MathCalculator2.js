@@ -28,10 +28,8 @@ class MatematycznyKalkulator {
         return result
     };
 
-    // wyswietlanie historii
     wyswietlanieHistorii = () => {return this.history}
 
-    // czyscimy historie
     czyszczenieHistorii = () => {this.history = []}
 
 }
