@@ -1,6 +1,6 @@
 const produkty = [
-    { nazwa: "Laptop", cena: 3000, kategoria: "elektronika" },
-    { nazwa: "Telefon", cena: 1500, kategoria: "elektronika" },
+    { nazwa: "Blue de Chanel", cena: 900, kategoria: "perfumy" },
+    { nazwa: "Tom Ford Out Wood", cena: 1500, kategoria: "perfumy" },
     { nazwa: "Stol", cena: 200, kategoria: "meble" },
     { nazwa: "Krzeslo", cena: 100, kategoria: "meble" },
 ];
@@ -8,8 +8,7 @@ const produkty = [
 const filtrowanieProduktow = (produkty, kategoria = null, minCena = 0, maxCena = 10000) =>
     produkty.filter(
         // Destrukturyzacja chcemy wyciagnac kategoria cen
-        ({ kategoria: c, cena }) =>
-            (!kategoria || c === kategoria) && cena >= minCena && cena <= maxCena
+        ({ kategoria: c, cena }) => (!kategoria || c === kategoria) && cena >= minCena && cena <= maxCena
     );
 
 function wyswietlProdukty(filtracjaProduktow) {
@@ -18,8 +17,8 @@ function wyswietlProdukty(filtracjaProduktow) {
     });
 }
 
-const kategoriaFiltru = "elektronika";
-const minCenaFiltru = 1000;         
+const kategoriaFiltru = "perfumy";
+const minCenaFiltru = 800;         
 const maxCenaFiltru = 3500;       
 
 
