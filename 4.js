@@ -1,4 +1,4 @@
-//lista oks
+//konstruujemy liste products
 const products = [
     { name: "Laptop", price: 3000, category: "elektronika" },
     { name: "Telefon", price: 1500, category: "elektronika" },
